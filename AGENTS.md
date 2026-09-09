@@ -10,4 +10,5 @@ React + Vite, JSX only — no TypeScript. Stack and test config: package.json, v
 # Workflow Commands
 
 - `/create-plan <description>` — Create a detailed implementation plan. Save to `plans/<slug>.md`. Include: files to create/modify, functions/components, test specs, checklist. Present for review before any implementation.
-- `/implement <plan-file>` — Implement `plans/<plan-file>.md` via strict TDD: git pull if a remote exists, new `feat/<slug>` branch, one failing test at a time (red → green, no two test files at once), full `npm run test`, commit only when all tests pass.
+- `/implement <plan-file>` — Implement `plans/<plan-file>.md` via strict TDD: git pull if a remote exists, new `feat/<slug>` branch, one failing test at a time (red → green, no two test files at once), full `npm run test`, commit only when all tests pass. Auto-runs the `post-commit-review` skill after the commit.
+- `post-commit-review` skill — Review the last commit (or changes since a ref) on four axes — correctness, secrets, standards, verbosity — as four parallel subagents. Auto-triggered by the model after `/implement` commits; also loadable on request.

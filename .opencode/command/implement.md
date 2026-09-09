@@ -42,3 +42,7 @@ If and ONLY IF the full suite passed:
 4. Report the branch name and the commit hash.
 
 If any test failed at any point (single test OR full suite): STOP. Do not commit. Report exactly which tests failed and why, then end.
+
+## Phase 4 — Post-commit review (kicks off automatically)
+
+After the commit succeeds, load the `post-commit-review` skill and execute its workflow to review the committed change on four axes (correctness, secrets, standards, verbosity) as parallel subagents. Run this review before reporting done.
